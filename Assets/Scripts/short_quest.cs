@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class short_quest : MonoBehaviour
 {
     public int compteur = 0;
+    public bool v1, v2 = false;
     public TMPro.TextMeshProUGUI count;  
     // Start is called before the first frame update
     void Start()
@@ -18,12 +19,17 @@ public class short_quest : MonoBehaviour
     {
         count.text = "X " + compteur;
 
-       
 
     }
 
-    public void increment()
+    public void increment1()
     {
-        compteur++;
+        if (v1 == false) { compteur++; v1 = true; }
+        
+    }
+    public void increment2()
+    {
+        if (v2 == false) { compteur++; v2 = true; }
     }
 }
+
