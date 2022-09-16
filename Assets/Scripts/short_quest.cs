@@ -24,24 +24,55 @@ public class short_quest : MonoBehaviour
     void Update()
     {
         count.text = "X " + compteur;
+
+        if ((endQ1 == false) && (clickAdmin == true) && (clickAmbic1 == true) && (clickMulti1 == true))
+        { 
+            compteur++; 
+            endQ1 = true;
+            reset();
+        }
+
+        if (endQ1 == true)
+        {
+            if ((endQ2 == false) && (clickAdmin == true) && (clickEB2 == true) && (clickMulti2 == true)
+                                    && (clickJJ2 == true) && (clickRU2 == true) && (clickCafet2)) 
+            { 
+                compteur++; 
+                endQ2 = true;
+                reset();
+            }
+        }
+
+        if (endQ2 == true)
+        {
+            if ((endQ3 == false) && (clickAdmin == true) && (clickJJ3 == true) && (clickMulti3 == true)
+                        && (clickEB3 == true) && (clickBU3)) 
+            { 
+                compteur++; 
+                endQ3 = true; 
+              
+            }
+        }
+
+       
     }
 
-    public void endQuest1()
+/*    public void endQuest1()
     {
         if ((endQ1 == false) && (clickAdmin == true) && (clickAmbic1 == true) && (clickMulti1 == true)) { compteur++; endQ1 = true; }
-    }
+    }*/
 
-    public void endQuest2()
+    /*public void endQuest2()
     {
         if ((endQ2 == false) && (clickAdmin == true) && (clickEB2 == true) && (clickMulti2 == true)
                                 && (clickJJ2 == true) && (clickRU2 == true) && (clickCafet2)) { compteur++; endQ2 = true; }
-    }
+    }*/
 
-    public void endQuest3()
+    /*public void endQuest3()
     {
         if ((endQ3 == false) && (clickAdmin == true) && (clickJJ3 == true) && (clickMulti3 == true)
                                 && (clickEB3 == true) && (clickBU3)) { compteur++; endQ3 = true; }
-    }
+    }*/
 
     //-------------------------------------------------------------------------------------------------------------------------------
 
@@ -88,5 +119,22 @@ public class short_quest : MonoBehaviour
     {
         if ((clickCafet2 == false) && (flag2 == 5)) { clickCafet2 = true; }
     }
-}
 
+
+ public void reset()
+{
+        clickAdmin = false;
+        flag1 = 0;
+        flag2 = 0;
+        clickMulti2 = false;
+        clickMulti3 = false;
+        clickEB3 = false;
+        clickEB2 = false;
+        clickEB3 = false;
+        clickJJ2 = false;
+        clickRU2 = false;
+        clickCafet2 = false;
+        clickBU3 = false;
+
+    } 
+}
