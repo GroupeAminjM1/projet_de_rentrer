@@ -9,11 +9,13 @@ public class GameManager : MonoBehaviour
     public TMPro.TextMeshProUGUI recomp_token;
     public GameObject recomp_diplome;
     int tokenmanager = 0;
-    public List<GameObject> l_canvas = new List<GameObject>(); 
+    public List<GameObject> l_canvas = new List<GameObject>();
+    public static bool multiTouchEnabled = false;
     // Start is called before the first frame update
     void Start()
     {
-        l_canvas[0].SetActive(true);
+        
+    l_canvas[0].SetActive(true);
         for (int i = 1; i < 5; i++)
         {
             l_canvas[i].SetActive(false);
